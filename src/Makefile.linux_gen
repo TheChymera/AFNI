@@ -18,7 +18,7 @@ XLIBS = -lXm -lXt
 CCDEBS = -DAFNI_DEBUG -DIMSEQ_DEBUG -DDISPLAY_DEBUG -DTHD_DEBUG
 CEXTRA = -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE $(CPROF) -DDONT_USE_XTDESTROY
 
-CC     = $(tc-getCC) \$(CFLAGS)
+CC     = gcc $(CFLAGS)
 CC     += -DREAD_WRITE_64 -DLINUX2 $(CEXTRA)
 CCVOL  = $(CC)
 CCFAST = $(CC)
@@ -29,7 +29,7 @@ CCOLD  = $(CC)
 # Your mileage may vary.
 
 OMPFLAG = -fopenmp -DUSE_OMP
-CCMIN  = $(tc-getCC) \$(CFLAGS)
+CCMIN  = gcc $(CFLAGS)
 CCD    = $(CC) $(CCDEBS)
 
 IFLAGS = -I. -I/usr/include
